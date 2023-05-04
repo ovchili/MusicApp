@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./Music App_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:3000/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/User/Desktop/MusicApp/src/assets/styles/base.scss">@font-face {
+  font-family: "StratosSkyEng";
+  src: url("/src/assets/fonts/StratosSkyeng.otf");
+  src: url("/src/assets/fonts/StratosSkyeng.woff2") format("woff2"), url("/src/assets/fonts/StratosSkyeng.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+#root[data-theme=theme-dark] {
+  --background-color: rgb(24, 24, 24);
+  --text-color: rgb(255, 255, 255);
+  --sidebar-back-color: rgb(28, 28, 28);
+  --audio-back-color: rgba(28, 28, 28, 0.5);
+  --error-text: rgb(212, 0, 0);
+  --input-placeholder-color: rgb(208, 206, 206);
+  --input-border-color: rgb(78, 78, 78);
+  --form-color: rgb(225, 225, 225);
+  --secondary: rgb(0, 0, 0);
+  --secondary-color-border: rgb(208, 206, 206);
+  --secondary-bg-hover: rgb(244, 245, 246);
+  --secondary-bg-active: rgb(217, 217, 217);
+  --primary: rgb(255, 255, 255);
+  --primary-bg: rgb(88, 14, 162);
+  --primary-bg-hover: rgb(63, 0, 125);
+  --primary-bg-active: rgb(39, 26, 88);
+  --track-bar-color: rgb(46, 46, 46);
+  --track-bar-color-active: rgb(182, 114, 255);
+  --icon-primary: rgb(217, 217, 217);
+  --icon-primary-hover: rgb(105, 105, 105);
+  --icon-secondary: rgb(105, 105, 105);
+  --icon-secondary-hover: rgb(172, 172, 172);
+  --icon-secondary-active: rgb(255, 255, 255);
+}
+
+#root[data-theme=theme-light] {
+  --background-color: rgb(24, 24, 24);
+  --text-color: rgb(255, 255, 255);
+  --sidebar-back-color: rgb(28, 28, 28);
+  --audio-back-color: rgba(28, 28, 28, 0.5);
+  --error-text: rgb(212, 0, 0);
+  --input-placeholder-color: rgb(208, 206, 206);
+  --input-border-color: rgb(78, 78, 78);
+  --form-color: rgb(225, 225, 225);
+  --secondary: rgb(0, 0, 0);
+  --secondary-color-border: rgb(208, 206, 206);
+  --secondary-bg-hover: rgb(244, 245, 246);
+  --secondary-bg-active: rgb(217, 217, 217);
+  --primary: rgb(255, 255, 255);
+  --primary-bg: rgb(88, 14, 162);
+  --primary-bg-hover: rgb(63, 0, 125);
+  --primary-bg-active: rgb(39, 26, 88);
+  --track-bar-color: rgb(46, 46, 46);
+  --track-bar-color-active: rgb(182, 114, 255);
+  --icon-primary: rgb(217, 217, 217);
+  --icon-primary-hover: rgb(105, 105, 105);
+  --icon-secondary: rgb(105, 105, 105);
+  --icon-secondary-hover: rgb(172, 172, 172);
+  --icon-secondary-active: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: "StratosSkyEng", sans-serif;
+}
+
+#root {
+  height: 100%;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+input {
+  font-family: "StratosSkyEng", sans-serif;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 24px;
+}</style><style type="text/css" data-vite-dev-id="C:/Users/User/Desktop/MusicApp/src/components/screens/Login/Login.module.scss">._container_12qlo_1 {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+._form_12qlo_9 {
+  width: 366px;
+  border-radius: 12px;
+  padding: 46px 0;
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+._input__container_12qlo_21 {
+  display: block;
+}
+
+._header_12qlo_25 {
+  display: flex;
+  justify-content: center;
+}
+
+._main_12qlo_30 {
+  padding: 35px 0 60px;
+  display: flex;
+  width: 278px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+._footer_12qlo_39 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+._input_12qlo_21 {
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid var(--input-placeholder-color);
+}
+._input_12qlo_21::placeholder {
+  color: var(--form-color);
+}
+
+._btn_12qlo_54 {
+  font-family: "StratosSkyeng", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 12px 0 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+._btn__primary_12qlo_65 {
+  color: var(--primary);
+  background: var(--primary-bg);
+  transition: background 0.3s ease-in;
+}
+._btn__primary_12qlo_65:hover {
+  background: var(--primary-bg-hover);
+}
+._btn__primary_12qlo_65:active {
+  background: var(--primary-bg-active);
+}
+
+._btn__secondary_12qlo_77 {
+  color: var(--secondary);
+  border: 1px solid var(--secondary-color-border);
+  transition: background 0.3s ease-in;
+}
+._btn__secondary_12qlo_77:hover {
+  background: var(--secondary-bg-hover);
+}
+._btn__secondary_12qlo_77:active {
+  background: var(--secondary-bg-active);
+}
+
+._error__text_12qlo_89 {
+  font-size: 12px;
+  color: var(--error-text);
+}</style><style type="text/css" data-vite-dev-id="C:/Users/User/Desktop/MusicApp/src/components/screens/Register/Register.module.scss">._container_j8ns1_1 {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+._form_j8ns1_9 {
+  width: 366px;
+  border-radius: 12px;
+  padding: 46px 0;
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+._input__container_j8ns1_21 {
+  display: block;
+}
+
+._header_j8ns1_25 {
+  display: flex;
+  justify-content: center;
+}
+
+._main_j8ns1_30 {
+  padding: 35px 0 60px;
+  display: flex;
+  width: 278px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+._footer_j8ns1_39 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+._input_j8ns1_21 {
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid var(--input-placeholder-color);
+}
+._input_j8ns1_21::placeholder {
+  color: var(--form-color);
+}
+
+._btn_j8ns1_54 {
+  font-family: "StratosSkyeng", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 12px 0 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+._btn__primary_j8ns1_65 {
+  color: var(--primary);
+  background: var(--primary-bg);
+  transition: background 0.3s ease-in;
+}
+._btn__primary_j8ns1_65:hover {
+  background: var(--primary-bg-hover);
+}
+._btn__primary_j8ns1_65:active {
+  background: var(--primary-bg-active);
+}
+
+._error__text_j8ns1_77 {
+  font-size: 12px;
+  color: var(--error-text);
+}</style><style type="text/css" data-vite-dev-id="C:/Users/User/Desktop/MusicApp/src/components/ui/Header/Header.module.scss">._header_1e7cb_1 {
+  display: flex;
+  padding: 36px 90px 36px 36px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+._header__hamburger_1e7cb_8 {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+._header__data_1e7cb_13 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+._header__logo_1e7cb_21 {
+  width: 114px;
+  display: flex;
+}
+._header__logo_1e7cb_21 > img {
+  width: 100%;
+}
+
+._header__search_1e7cb_29 {
+  width: 1293px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+._header__search_1e7cb_29 > ._icon_1e7cb_35 {
+  position: absolute;
+  font-size: 16px;
+}
+._header__search_1e7cb_29 > input {
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  position: relative;
+  width: 100%;
+  padding: 14px 30px;
+  border-bottom: 1px solid var(--input-border-color);
+}
+._header__search_1e7cb_29 > input::placeholder {
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 18px;
+}
+
+._header__logout_1e7cb_54 {
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.3s ease;
+}
+._header__logout_1e7cb_54 > svg {
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+._header__logout_1e7cb_54:hover {
+  border: 1px solid var(--input-border-color);
+}
+._header__logout_1e7cb_54:hover > svg {
+  color: var(--input-border-color);
+}</style><style type="text/css" data-vite-dev-id="C:/Users/User/Desktop/MusicApp/src/components/ui/SideBar/SideBar.module.scss">._sidebar_142ra_1 {
+  position: fixed;
+  width: 244px;
+}</style></head>
+  <body>
+    <div id="root" data-theme="theme-dark"><header class="_header_1e7cb_1"><div class="_header__data_1e7cb_13"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="_header__hamburger_1e7cb_8" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg><a class="_header__logo_1e7cb_21" href="http://localhost:3000/"><img src="./Music App_files/logo.png"></a></div><div class="_header__search_1e7cb_29"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="_icon_1e7cb_35" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg><input type="text" placeholder="Поиск"></div><div class="_header__logout_1e7cb_54"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M17 8l-1.41 1.41L17.17 11H9v2h8.17l-1.58 1.58L17 16l4-4-4-4zM5 5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5z"></path></svg></div></header><aside class="_sidebar_142ra_1">SideBar</aside><div><div>Home</div></div><div>Footer</div></div>
+    <script type="module" src="./Music App_files/main.tsx"></script>
+  
+
+</body></html>
