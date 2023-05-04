@@ -1,0 +1,32 @@
+#root[data-theme='theme-dark'] {
+	--background-color: rgb(24, 24, 24);
+	--text-color: rgb(255, 255, 255);
+	--sidebar-back-color: rgb(28, 28, 28);
+	--audio-back-color: rgba(28, 28, 28, 0.5);
+
+	--error-text: rgb(212, 0, 0);
+	--input-placeholder-color: rgb(208, 206, 206);
+	--input-border-color: rgb(78, 78, 78);
+
+	--form-color: rgb(225, 225, 225);
+
+	--secondary: rgb(0, 0, 0);
+	--secondary-color-border: rgb(208, 206, 206);
+	--secondary-bg-hover: rgb(244, 245, 246);
+	--secondary-bg-active: rgb(217, 217, 217);
+
+	--primary: rgb(255, 255, 255);
+	--primary-bg: rgb(88, 14, 162);
+	--primary-bg-hover: rgb(63, 0, 125);
+	--primary-bg-active: rgb(39, 26, 88);
+
+	--track-bar-color: rgb(46, 46, 46);
+	--track-bar-color-active: rgb(182, 114, 255);
+
+	--icon-primary: rgb(217, 217, 217);
+	--icon-primary-hover: rgb(105, 105, 105);
+
+	--icon-secondary: rgb(105, 105, 105);
+	--icon-secondary-hover: rgb(172, 172, 172);
+	--icon-secondary-active: rgb(255, 255, 255);
+}

@@ -1,0 +1,28 @@
+@use 'fonts';
+@use 'variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100vh;
+	font-family: 'StratosSkyEng', sans-serif;
+}
+
+#root {
+	height: 100%;
+	background: var(--background-color);
+	color: var(--text-color);
+}
+
+input {
+	font-family: 'StratosSkyEng', sans-serif;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	line-height: 24px;
+}

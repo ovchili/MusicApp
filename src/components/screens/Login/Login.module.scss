@@ -1,0 +1,96 @@
+.container {
+	height: 100%;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.form {
+	width: 366px;
+	border-radius: 12px;
+	padding: 46px 0;
+	background: #fff;
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	flex-wrap: wrap;
+}
+
+.input__container {
+	display: block;
+}
+.header {
+	display: flex;
+	justify-content: center;
+}
+
+.main {
+	padding: 35px 0 60px;
+	display: flex;
+	width: 278px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.input {
+	width: 100%;
+	padding: 8px;
+	border-bottom: 1px solid var(--input-placeholder-color);
+
+	&::placeholder {
+		color: var(--form-color);
+	}
+}
+
+.btn {
+	font-family: 'StratosSkyeng', sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 12px 0 16px;
+	border-radius: 6px;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.btn__primary {
+	color: var(--primary);
+	background: var(--primary-bg);
+	transition: background 0.3s ease-in;
+
+	&:hover {
+		background: var(--primary-bg-hover);
+	}
+
+	&:active {
+		background: var(--primary-bg-active);
+	}
+}
+
+.btn__secondary {
+	color: var(--secondary);
+	border: 1px solid var(--secondary-color-border);
+	transition: background 0.3s ease-in;
+
+	&:hover {
+		background: var(--secondary-bg-hover);
+	}
+
+	&:active {
+		background: var(--secondary-bg-active);
+	}
+}
+
+.error__text {
+	font-size: 12px;
+	color: var(--error-text);
+}
