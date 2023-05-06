@@ -1,4 +1,11 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import {
+	FC,
+	MouseEvent,
+	PropsWithChildren,
+	useEffect,
+	useRef,
+	useState,
+} from 'react'
 
 import Footer from '@/ui/Footer/Footer'
 import Header from '@/ui/Header/Header'
@@ -9,6 +16,7 @@ import style from './Main.module.scss'
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	const [isOpen, setIsOpen] = useState(false)
+
 	return (
 		<div className={style.container}>
 			<Header isOpen={isOpen} setIsOpen={setIsOpen} />
