@@ -1,4 +1,5 @@
 import { FC, ReactNode, useState } from 'react'
+import { toastr } from 'react-redux-toastr'
 
 import style from './ToggleSwitch.module.scss'
 

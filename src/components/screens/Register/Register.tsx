@@ -1,9 +1,14 @@
 import clsx from 'clsx'
+import { useEffect } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
 import TextField from '@/ui/TextField/TextField'
 
 import { IRegister } from '@/types/IRegister.type'
+
+import { useActions } from '@/hooks/useActions'
+import { useAuth } from '@/hooks/useAuth'
 
 import logo from '@/assets/images/logo__white.png'
 
@@ -25,7 +30,16 @@ const Register = () => {
 			passwordConfirm: '',
 		},
 	})
-	const onSubmit: SubmitHandler<IRegister> = (data) => console.log(data)
+
+	const { user } = useAuth()
+	const nav = useNavigate()
+	useEffect(() => {
+		if (user) {
+			nav('/home')
+		}
+	}, [user])
+	const { register } = useActions()
+	const onSubmit: SubmitHandler<IRegister> = (data) => register(data)
 	return (
 		<div className={style.container}>
 			<form className={style.form} onSubmit={handleSubmit(onSubmit)}>

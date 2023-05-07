@@ -8,6 +8,9 @@ export default defineConfig({
 	server: {
 		port: 3000,
 		host: true,
+		proxy: {
+			'/api': 'http://localhost:4200/',
+		},
 	},
 	resolve: {
 		alias: {
@@ -15,5 +18,6 @@ export default defineConfig({
 			'~fonts': resolve(__dirname, 'src/assets/fonts'),
 		},
 	},
+
 	plugins: [tsconfigPaths(), react()],
 })

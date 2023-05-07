@@ -1,10 +1,19 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Outlet, useNavigate } from 'react-router-dom'
+
+import { useAuth } from '@/hooks/useAuth'
 
 import MainLayout from './Main/MainLayout'
 
 const ProtectedRoutes = () => {
-	const login = true
-	return login ? (
+	const { user } = useAuth()
+	const nav = useNavigate()
+	useEffect(() => {
+		if (user) {
+			nav('home')
+		}
+	}, [user])
+	return user ? (
 		<MainLayout>
 			<Outlet />
 		</MainLayout>

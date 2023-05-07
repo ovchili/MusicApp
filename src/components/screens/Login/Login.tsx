@@ -1,10 +1,16 @@
 import clsx from 'clsx'
+import { useEffect } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import TextField from '@/ui/TextField/TextField'
 
 import { ILogin } from '@/types/Ilogin.type'
+
+import { useActions } from '@/hooks/useActions'
+import { useAuth } from '@/hooks/useAuth'
+import { useTypedSelector } from '@/hooks/useTypedSelector'
 
 import logo from '@/assets/images/logo__white.png'
 
@@ -16,14 +22,24 @@ const Login = () => {
 		nav('/register')
 	}
 
+	const { user } = useAuth()
+	const { login } = useActions()
 	const { control, handleSubmit } = useForm<ILogin>({
 		mode: 'onChange',
 		defaultValues: {
-			loginOrEmail: '',
+			emailLogin: '',
 			password: '',
 		},
 	})
-	const onSubmit: SubmitHandler<ILogin> = (data) => console.log(data)
+	const onSubmit: SubmitHandler<ILogin> = (data) => {
+		login(data)
+	}
+
+	useEffect(() => {
+		if (user) {
+			nav('/home')
+		}
+	}, [user])
 	return (
 		<div className={style.container}>
 			<form className={style.form} onSubmit={handleSubmit(onSubmit)}>
@@ -32,7 +48,7 @@ const Login = () => {
 				</header>
 				<main className={style.main}>
 					<Controller
-						name="loginOrEmail"
+						name="emailLogin"
 						rules={{ required: 'Поле должно быть заполненным' }}
 						control={control}
 						render={({ field, fieldState }) => (

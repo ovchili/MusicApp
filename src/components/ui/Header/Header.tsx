@@ -3,6 +3,8 @@ import { set } from 'react-hook-form'
 import { MdOutlineLogout, MdOutlineMenu, MdOutlineSearch } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
+import { useActions } from '@/hooks/useActions'
+
 import logo from '@/assets/images/logo.png'
 
 import style from './Header.module.scss'
@@ -12,6 +14,7 @@ type HeaderProps = {
 	setIsOpen: Dispatch<SetStateAction<boolean>>
 }
 const Header: FC<HeaderProps> = ({ setIsOpen, isOpen }) => {
+	const { logout } = useActions()
 	return (
 		<header className={style.header}>
 			<div className={style.header__data}>
@@ -32,7 +35,11 @@ const Header: FC<HeaderProps> = ({ setIsOpen, isOpen }) => {
 			</div>
 
 			<div className={style.header__logout}>
-				<MdOutlineLogout />
+				<MdOutlineLogout
+					onClick={() => {
+						logout()
+					}}
+				/>
 			</div>
 		</header>
 	)

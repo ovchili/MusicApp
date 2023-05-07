@@ -1,6 +1,8 @@
 @use 'fonts';
 @use 'variables';
 
+@import 'react-redux-toastr/src/styles/index';
+
 * {
 	margin: 0;
 	padding: 0;
